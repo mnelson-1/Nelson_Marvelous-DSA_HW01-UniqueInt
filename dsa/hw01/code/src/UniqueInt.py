@@ -11,7 +11,8 @@ class UniqueInt:
 
             try:
                 processed_line = int(raw_line)
-                output_list += [processed_line]
+                if processed_line not in output_list:
+                    output_list += [processed_line]
             except Exception as e:
                 continue
 
@@ -51,4 +52,3 @@ if __name__ == '__main__':
         end_time = time.time()
 
         print(f"Elapsed time: {end_time - start_time} seconds")
-
